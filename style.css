@@ -1,33 +1,56 @@
 body {
     height: 100vh;
-    width: 100vw; /* Changed from 100vh */
+    width: 100vw;
     margin: 0;
     overflow: hidden;
     background-color: black;
-    z-index: 1;
   }
   
-#title {
+  #title {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     color: white;
     font-family: 'Roboto', sans-serif;
     z-index: 1;
+    font-size: 5vmin;
   }
-
-#image-track > .game-image {
- width: 40vmin;
- height: 56vmin;
- object-fit: cover;
- object-position: center;
- z-index: 2;
-
-}
-
-#image-track {
+  
+  #title-container {
     display: flex;
-    gap: 4vmin;
-    position: absolute;
-    left: 50%; top: 50%; transform: translate(-50%, -50%);
-}
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #title-sub {
+    margin-top: -6vmin; /* Add margin to separate from #title */
+  }
+  
+  #image-track {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+  }
+  
+  #image-track > .game-image {
+    width: 40vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: center;
+    margin: 1vmin;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    #title {
+      font-size: 4vmin;
+    }
+    
+    #image-track {
+      height: 60%;
+    }
+  }
